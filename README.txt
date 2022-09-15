@@ -1,0 +1,1 @@
+This repository includes assignments for ITSC3155
