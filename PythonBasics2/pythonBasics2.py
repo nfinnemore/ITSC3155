@@ -10,6 +10,9 @@
 # returns the number of multiples of 3 in the range from 0
 # to n (including n).
 
+from asyncio.windows_events import NULL
+
+
 def count_threes(n):
   multiples = 0
   if n % 3 == 0:
@@ -21,10 +24,20 @@ def count_threes(n):
 # Part B. longest_consecutive_repeating_char
 # Define a function longest_consecutive_repeating_char(s) that takes
 # a string s and returns the character that has the longest consecutive repeat.
-def longest_consecutive_repeating_char(s):
-  # YOUR CODE HERE
-
-  return
+def longest_consecutive_repeating_char(stringS):
+  longestChar = stringS[0]
+  longest = 0
+  for i in range (0,len(stringS)):
+    count = 0
+    for j in range(i+1,len(stringS)):
+      if (stringS[i] == stringS[j]):
+        count += 1
+      else:
+        break
+    if count > longest:
+      count = longest
+      longestChar = stringS[i]
+  return longestChar
 
 
 # Part C. is_palindrome
